@@ -29,6 +29,7 @@ module "talos" {
     gateway         = "192.168.64.1"
     subnet_mask     = "18"
     proxmox_cluster = "HomeLab"
+    base_domain     = "enark.tech"
     kubernetes_version = "1.32.0"  # renovate: github-releases=kubernetes/kubernetes
   }
 
@@ -80,7 +81,7 @@ module "sealed_secrets" {
   // openssl req -x509 -days 365 -nodes -newkey rsa:4096 -keyout sealed-secrets.key -out sealed-secrets.crt -subj "/CN=sealed-secret/O=sealed-secret"
   cert = {
     cert = file("${path.module}/bootstrap/sealed-secrets/certificates/sealed-secrets.crt")
-    key  = file("${path.module}/bootstrap/sealed-secrets/certificates/sealed-secrets.key")
+    key = file("${path.module}/bootstrap/sealed-secrets/certificates/sealed-secrets.key")
   }
 }
 

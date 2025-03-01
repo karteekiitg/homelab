@@ -21,6 +21,7 @@ variable "cluster" {
     gateway         = string
     subnet_mask     = optional(string, "24")
     proxmox_cluster = string
+    base_domain     = string
     kubernetes_version = string
   })
 }

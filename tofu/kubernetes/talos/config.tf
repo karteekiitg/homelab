@@ -21,6 +21,7 @@ data "talos_machine_configuration" "this" {
     templatefile("${path.module}/machine-config/control-plane.yaml.tftpl", {
       cilium_values  = var.cilium.values
       cilium_install = var.cilium.install
+      base_domain    = var.cluster.base_domain
     })
     , templatefile("${path.module}/machine-config/common.yaml.tftpl", {
       node_name      = each.value.host_node

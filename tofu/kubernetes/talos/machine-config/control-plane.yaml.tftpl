@@ -8,7 +8,7 @@ cluster:
   allowSchedulingOnControlPlanes: true
   apiServer:
     extraArgs:
-      oidc-issuer-url: https://authelia.stonegarden.dev
+      oidc-issuer-url: https://authelia.${base_domain}
       oidc-client-id: kubectl
       oidc-username-claim: preferred_username
       oidc-username-prefix: 'authelia:'
