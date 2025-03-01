@@ -29,6 +29,7 @@ module "talos" {
     gateway         = "192.168.64.1"
     subnet_mask     = "18"
     proxmox_cluster = "HomeLab"
+    kubernetes_version = "1.32.0"  # renovate: github-releases=kubernetes/kubernetes
   }
 
   nodes = {
