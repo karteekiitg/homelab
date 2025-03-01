@@ -28,7 +28,6 @@ module "talos" {
     vip             = "192.168.71.50"
     gateway         = "192.168.64.1"
     subnet_mask     = "18"
-    talos_version   = "v1.9.4"
     proxmox_cluster = "HomeLab"
   }
 
