@@ -42,4 +42,8 @@ resource "cloudflare_zero_trust_list" "adblock_domain_lists" {
   type        = "DOMAIN"
   items       = [for domain_str in each.value.domains_in_chunk : { value = domain_str }] # Changed to use domains_in_chunk
   description = "Adblock list. Source chunk file: ${each.key}. Managed by Terraform."
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
